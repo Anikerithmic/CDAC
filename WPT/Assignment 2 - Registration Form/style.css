@@ -1,0 +1,71 @@
+body {
+  font-family: "Geneva", Tahoma, sans-serif;
+  background-color: #f4f4f4;
+  margin: 0;
+  padding: 0;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
+}
+h1 {
+  text-align: center;
+}
+
+.form {
+  background-color: #fff;
+  padding: 20px;
+  border-radius: 10px;
+  box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+  width: 375px;
+}
+label {
+  display: block;
+  margin-top: 10px;
+  font-weight: 100;
+}
+
+input[type="text"],
+input[type="email"],
+input[type="tel"],
+input[type="radio"],
+input[type="password"] {
+  width: 93%;
+  padding: 10px;
+  margin-top: 5px;
+  border: 1px solid #ccc;
+  border-radius: 5px;
+}
+textarea {
+  max-width: 365px;
+  max-height: 100px;
+  width: 300px;
+  height: 48px;
+}
+
+.gender-options {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  margin-top: 5px;
+}
+.gender-options input[type="radio"] {
+  width: auto;
+}
+
+.gender-label {
+  margin-right: 20px;
+}
+button {
+  width: 100%;
+  padding: 10px;
+  background-color: #28a745;
+  color: white;
+  border: none;
+  border-radius: 5px;
+  margin-top: 15px;
+  cursor: pointer;
+}
+button:hover {
+  background-color: #218838;
+}

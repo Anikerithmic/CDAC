@@ -1,0 +1,148 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Assignment 3</title>
+</head>
+
+<style>
+    .input-box {
+        width: 28%;
+        padding: 4px;
+
+    }
+
+    lable,
+    input {
+        margin-bottom: 10px;
+    }
+</style>
+
+<body>
+
+    <button>Submit</button>
+    <p id="paragraph">Lorem, ipsum dolor sit amet consectetur adipisicing elit. Saepe soluta autem expedita totam, eius
+        deleniti error
+        magnam sunt, doloremque, quis dolorum molestiae laudantium suscipit accusantium fugiat quo ipsum velit porro
+        dolorem facilis aperiam harum quia! Quasi quibusdam aut sequi odit porro doloribus, quia ipsam numquam corporis
+        neque quas est laboriosam?</p>
+
+    <hr>
+
+    <h1>Form :</h1>
+
+
+    <form action="#">
+        <label for="fname">First Name:</label>
+        <input type="text" id="fname" class="input-box">
+        <label for="lname">Last Name:</label>
+        <input type="text" id="lname" class="input-box">
+        <label for="contact">Contact:</label>
+        <input type="tel" id="contact" class="input-box">
+        <label for="email">Email ID:</label>
+        <input type="email" id="email" class="input-box">
+    </form>
+    <button type="button" onclick="printValues()">Submit</button>
+    <div id="output-container"></div>
+
+    <hr>
+
+    <h2>Drop Down list:</h2>
+
+    <label for="items">Choose items:</label>
+    <select name="" id="items">
+        <option value="nodejs">Node.js</option>
+        <option value="expressjs">Express.js</option>
+        <option value="mongodb">MongoDB</option>
+        <option value="socketio">Socket.io</option>
+        <option value="aws">AWS</option>
+    </select>
+    <button onclick="removeItems()">Remove items</button>
+
+    <hr>
+
+    <a href="#" id="hover-link">On mouse over here bold words of a following paragraph will be highlighted.</a>
+    <p id="text">We have just started this section for the users(beginner to intermediate) who want to work with various
+        JavaScript problems and write scripts online to test their JavaScript skill.</p>
+
+
+
+    <script>
+
+        const button = document.querySelector('button');
+        const para = document.getElementById('paragraph');
+        const form = document.getElementsByTagName('form')[0];
+        let toggle = false;
+
+        form.style.display = "flex";
+        form.style.flexDirection = "column";
+        form.style.width = "column";
+
+
+        button.addEventListener('click', () => {
+            if (toggle) {
+                para.style.fontFamily = 'Arial, sans-serif';
+                para.style.fontSize = '15px';
+                para.style.color = 'black';
+            }
+            else {
+                para.style.fontFamily = 'Courier New';
+                para.style.fontSize = '18px';
+                para.style.color = 'orange';
+            }
+            toggle = !toggle;
+
+
+
+        });
+
+
+        function printValues() {
+            const fname = document.getElementById('fname').value;
+            const lname = document.getElementById('lname').value;
+            const contact = document.getElementById('contact').value;
+            const email = document.getElementById('email').value;
+            const outputDiv = document.getElementById('output-container');
+
+
+            outputDiv.innerHTML = `<p>First Name: ${fname}</p>
+                                <p>Last Name: ${lname}</p>
+                                <p>Contact: ${contact}</p>
+                                <p>Email: ${email}</p>`;
+
+            outputDiv.style.border = "1px solid black";
+            outputDiv.style.marginTop = "20px";
+            outputDiv.style.padding = "15px";
+
+        }
+
+        function removeItems() {
+            const selectElement = document.getElementById('items');
+            const selectedOption = selectElement.options[selectElement.selectedItem];
+
+            if (selectedOption !== -1) {
+                selectElement.remove(selectElement.selectedItem);
+                alert("Item removed.");
+            }
+            else {
+                alert("Please select an item to remove");
+            }
+        }
+
+        const link = document.getElementById('hover-link');
+        const paragraph = document.getElementById('text');
+
+        function makeBold(){
+            paragraph.innerHTML = paragraph.innerHTML.replace()
+        }
+
+
+
+
+    </script>
+
+</body>
+
+</html>
